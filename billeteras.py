@@ -2,10 +2,6 @@
 class Billetera:
     '''Representa una billetera estandar, que puede enviar y recibir dinero'''
 
-    @property
-    def cantidad_dinero(self):
-        return self.cantidad_dinero
-
     def __init__(self):
         self.cantidad_dinero = 0
 

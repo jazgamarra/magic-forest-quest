@@ -27,32 +27,32 @@ preguntas_protectores = [
 acertijos = [
     {
         "adivinanza": "¿Qué cosa puede tener un agujero, pero también estar lleno?",
-        "opciones": ["Un tamiz", "Un barril", "Un balde"],
-        "respuesta": "Un barril",
+        "opciones": ["a) Un tamiz", "b) Un barril", "c) Un balde"],
+        "respuesta": "b",
         "pista": "Se utiliza para almacenar líquidos."
     },
     {
         "adivinanza": "¿Qué cosa siempre va hacia arriba, pero nunca vuelve?",
-        "opciones": ["El sol", "Un globo", "Una burbuja"],
-        "respuesta": "Una burbuja",
+        "opciones": ["a) El sol", "b) Un globo", "c) Una burbuja"],
+        "respuesta": "c",
         "pista": "Se produce cuando se agita un líquido gaseoso."
     },
     {
         "adivinanza": "¿Qué cosa se rompe solo al ser nombrada?",
-        "opciones": ["La promesa", "El silencio", "El huevo"],
-        "respuesta": "El silencio",
+        "opciones": ["a) La promesa", "b) El silencio", "c) El huevo"],
+        "respuesta": "b",
         "pista": "Es una cualidad que se aprecia en momentos de reflexión."
     }, 
     {
         "adivinanza": "¿Cuál es el número que siempre se queda igual si le quitas la mitad?",
-        "opciones": ["0", "1", "2"],
-        "respuesta": "2",
+        "opciones": ["a) 0", "b) 1", "c) 2"],
+        "respuesta": "c",
         "pista": "Es un número par."
     },
     {
         "adivinanza": "Siempre se habla de ella, pero nunca se la ve. ¿Qué es?",
-        "opciones": ["La verdad", "La mentira", "La fama"],
-        "respuesta": "La verdad",
+        "opciones": ["a) La verdad", "b) La mentira", "c) La fama"],
+        "respuesta": "a",
         "pista": "Es algo abstracto."
     }
 
