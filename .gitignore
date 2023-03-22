@@ -1,0 +1,9 @@
+# Archivos generados automáticamente
+*.pyc
+__pycache__
+
+# Directorios generados automáticamente
+# venv/
+# env/
+# .idea/
+# .vscode/
