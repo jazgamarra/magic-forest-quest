@@ -35,10 +35,10 @@ class Jugador (Personaje):
     def resolver_acertijo(self):
         '''El jugador elige una de las opciones para resolver el acertijo. Se valida si la respuesta es valida, si no, se envia una respuesta generica incorrecta. '''
         print('Ingrese una opcion: ') 
-        respuesta = input('>>> ').lower()
+        respuesta_jugador = input('>>> ')
 
-        if respuesta in ['a', 'b', 'c']: 
-            return respuesta 
+        if respuesta_jugador.lower() in ['a', 'b', 'c']: 
+            return respuesta_jugador 
         else: 
             return 'x'
     
@@ -46,7 +46,7 @@ class Jugador (Personaje):
         print('Responde: ')
         input('>>> ')
 
-    def realizar_pago(): 
+    def realizar_pago(self): 
         '''El jugador decide si realizar o no el pago '''
         print('Responda "si" o "no": ')
         respuesta = input('>>> ')
@@ -111,6 +111,8 @@ class SabioMentor(Sabio):
     def dar_acertijo(self, acertijo):
         print('Joven explorador, resuelve este acertijo y ganaras un poco mas mi corazon. ')
         print(acertijo['adivinanza'])
+        print(acertijo['opciones'])
+
 
     def sobornar_jugador(self, jugador):
         print ('Veo que no conoces la respuesta. Podria dejarte pasar... a cambio de que me pagues el almuerzo de hoy. Aceptas? ')
@@ -135,6 +137,7 @@ class SabioRival(Sabio):
         '''Desafia al jugador con un acertijo'''
         print('Joven, resuelve este acertijo si eres digno de la sabiduria del arbol magico. ')
         print(acertijo['adivinanza'])
+        print(acertijo['opciones'][0], acertijo['opciones'][1], acertijo['opciones'][2])
 
     def sobornar_jugador(self, jugador ):
         '''Ofrece al jugador una coima para dejar pasar la pregunta, pero si acepta, lo hostiga y molesta hasta que se vaya. '''

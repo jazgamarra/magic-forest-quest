@@ -1,5 +1,6 @@
 from personajes import *
 from utils import *
+from texto import acertijos
 
 print('+++++++++++++++++++++++++++++++++++')
 print('Bienvenido a Magic Forest Quest!')
@@ -29,6 +30,7 @@ print('-----------------------------------')
 print('INICIA EL JUEGO: ')
 print('-----------------------------------')
 
+
 # El jugador se encuentra con el anciano, quien le presenta su mision. 
 print('>> Anciano del Bosque: ')
 anciano.convocar_al_jugador()
@@ -52,3 +54,42 @@ print(f'\n>> {protector1.nombre} (Protector del Bosque)')
 protector1.hacer_pregunta()
 player.responder_pregunta()
 protector1.ofrecer_dinero(player)
+
+
+# El jugador se encuentra con uno de los sabios. 
+print(f'\n>> {sabio_mentor.nombre} (Sabio)')
+sabio_mentor.presentarse()
+print('Estas listo para un desafio??')
+
+while True: 
+    acertijo = random.choice(acertijos)
+
+    print(f'\n>> {sabio_mentor.nombre} (Sabio)')
+    sabio_mentor.dar_acertijo(acertijo)
+
+    respuesta_jugador = player.resolver_acertijo()
+
+    if verificar_respuesta(respuesta_jugador, acertijo): 
+        print('La respuesta es correcta!')
+        break
+    else: 
+        print('La respuesta no es correcta. ')
+
+        print('\n>> Anciano')
+        aceptar = player.responder_pregunta
+        
+        if aceptar: 
+            anciano.dar_pista(acertijo, player)
+            print(acertijo['opciones'])
+            respuesta_jugador = player.resolver_acertijo()
+
+            if verificar_respuesta(respuesta_jugador, acertijo): 
+                break 
+            else: 
+                print('Lo siento, fallaste de nuevo. Tendras que resolver otro acertijo.')
+            
+        else: 
+            print(f'\n>> {sabio_mentor.nombre} (Sabio)')
+            aceptar = sabio_mentor.sobornar_jugador()
+            if aceptar:
+                break 

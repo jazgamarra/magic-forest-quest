@@ -1,7 +1,8 @@
 def transaccion_dinero (emisor, receptor, monto): 
     if emisor.billetera.pagar(monto): 
         receptor.billetera.recibir_dinero(monto)
-        print(f'{receptor.nombre} ha recibido {monto} de {emisor.nombre}')
+    
+        print(f'+++ {receptor.nombre} ha recibido {monto} de {emisor.nombre} +++ ')
         return True 
     else:
         print(emisor.billetera.cantidad_dinero, emisor.__class__)
