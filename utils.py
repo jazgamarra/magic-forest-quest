@@ -1,3 +1,5 @@
+from personajes import *
+
 def transaccion_dinero (emisor, receptor, monto): 
     if emisor.billetera.pagar(monto): 
         receptor.billetera.recibir_dinero(monto)

@@ -1,36 +1,22 @@
-from personajes import *
+from crear_personajes import *
 from utils import *
-from texto import acertijos
+from texto import acertijos 
+
 import time 
 import os
+
 
 print('++++++++++++++++++++++++++++++++++++++++++++++++++')
 print('          Bienvenido a Magic Forest Quest!')
 print('++++++++++++++++++++++++++++++++++++++++++++++++++')
 nombre_usuario = input('Cual es tu nombre? ')
-
-# --------------------------------------------------------------------------------------
-# Crear personajes 
-# --------------------------------------------------------------------------------------
-player = Jugador(nombre_usuario, 'humano', 'valiente, entusiasta y alegre', 'encontrar el arbol magico para obtener su sabiduria', 'sacar adelante a mi pueblo a traves de la magia', 'Acompanhame en esta aventura') 
-
-anciano = Anciano ('Alatar', 'humano', 'sabio, amable y protector', 'llevar la voz de la magia al mundo', 'creo que la magia salvara muchas vidas si se la lleva al lugar correcto',  'Bienvenido, explorador') 
-
-sabio_mentor = SabioMentor ('Isidore', 'humano', 'intelectual, sereno y enigmático', 'evaluar a los exploradores para determinar si son dignos de mi confianza', 'proteger el arbol magico de personas peligrosas', 'Que empiece la prueba')
-
-sabio_rival = SabioRival('Halim', 'elfo oscuro', 'egoista, inteligente y astuto.', 'evitar que cualquiera llegue al Árbol Mágico.', 'probar mi propia habilidad paras proteger el arbol', '¿Quién se atreve a desafiarme?')
-
-protector1 = Protector('Talara', 'ninfa', 'amigable, curiosa y protectora.', 'investigar por qué los humanos están causando daño en el bosque mágico.', 'ayudar a los humanos a comprender el valor del bosque mágico y a protegerlo.', 'Saludos, aventurero') 
-
-# protector2 = 
+player.nombre = nombre_usuario
 
 # --------------------------------------------------------------------------------------
 # INICIAR EL JUEGO 
 # --------------------------------------------------------------------------------------
 
-print('-----------------------------------')
-print('         INICIA EL JUEGO: ')
-print('-----------------------------------')
+print('\n\n       ***  INICIA EL JUEGO *** ')
 time.sleep(1)
 os.system('clear')
 
@@ -79,22 +65,20 @@ while True:
     acertijo = random.choice(acertijos)
 
     print(f'\n>> {sabio_mentor.nombre} (Sabio)')
-    sabio_mentor.dar_acertijo(acertijo)
-
-    respuesta_jugador = player.resolver_acertijo()
+    respuesta_acertijo = sabio_mentor.dar_acertijo(acertijo, player)
     time.sleep(3)
 
-    if verificar_respuesta(respuesta_jugador, acertijo): 
+    if respuesta_acertijo: 
         print('La respuesta es correcta!')
         break
     else: 
         print('La respuesta no es correcta. ')
 
         print('\n>> Anciano')
-        aceptar = player.responder_pregunta
+        print('Veo que no conoces la respuesta. Desea una pista?')
+        aceptar = anciano.dar_pista(acertijo, player) 
         
         if aceptar: 
-            anciano.dar_pista(acertijo, player)
             print(acertijo['opciones'])
             respuesta_jugador = player.resolver_acertijo()
 
@@ -105,8 +89,9 @@ while True:
             
         else: 
             print(f'\n>> {sabio_mentor.nombre} (Sabio)')
-            aceptar = sabio_mentor.sobornar_jugador()
+            aceptar = sabio_mentor.sobornar_jugador(player)
             if aceptar:
                 break 
 
-print('... continuara')
+print('... esta aventura continuara')
+time.sleep(2)
