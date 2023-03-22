@@ -34,8 +34,7 @@ class Jugador (Personaje):
 
     def resolver_acertijo(self):
         '''El jugador elige una de las opciones para resolver el acertijo. Se valida si la respuesta es valida, si no, se envia una respuesta generica incorrecta. '''
-        print('Ingrese una opcion: ') 
-        respuesta_jugador = input('>>> ')
+        respuesta_jugador = input('Ingrese una opcion: ')
 
         if respuesta_jugador.lower() in ['a', 'b', 'c']: 
             return respuesta_jugador 
@@ -43,13 +42,11 @@ class Jugador (Personaje):
             return 'x'
     
     def responder_pregunta(self): 
-        print('Responde: ')
-        input('>>> ')
+        input('Responde: ')
 
     def realizar_pago(self): 
         '''El jugador decide si realizar o no el pago '''
-        print('Responda "si" o "no": ')
-        respuesta = input('>>> ')
+        respuesta = input('Responda "si" o "no": ')
 
         return respuesta.lower() == 'si' 
         
