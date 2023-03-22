@@ -1,6 +1,6 @@
-from crear_personajes import *
-from utils import *
-from texto import acertijos 
+from inicializaciones.crear_personajes import *
+from mecanicas_juego import *
+from inicializaciones.texto import acertijos 
 
 import time 
 import os
@@ -83,6 +83,7 @@ while True:
             respuesta_jugador = player.resolver_acertijo()
 
             if verificar_respuesta(respuesta_jugador, acertijo): 
+                print('La respuesta es correcta!')
                 break 
             else: 
                 print('Lo siento, fallaste de nuevo. Tendras que resolver otro acertijo.')

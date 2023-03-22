@@ -1,4 +1,4 @@
-from personajes import * 
+from clases.personajes import * 
 
 player = Jugador('Explorador', 'humano', 'valiente, entusiasta y alegre', 'encontrar el arbol magico para obtener su sabiduria', 'sacar adelante a mi pueblo a traves de la magia', 'Acompanhame en esta aventura') 
 

@@ -1,8 +1,8 @@
 from abc import ABCMeta, abstractmethod
 import random 
-from texto import consejos_anciano, preguntas_protectores
-from billeteras import * 
-from utils import *
+from inicializaciones.texto import consejos_anciano, preguntas_protectores
+from clases.billeteras import * 
+from mecanicas_juego import *
 
 class Personaje (metaclass=ABCMeta):
     ''' Representa a todos los personajes del juego, agrupando las caracteristicas comunes minimas para interactuar entre ellos. '''
