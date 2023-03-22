@@ -1,16 +1,18 @@
 from personajes import *
 from utils import *
 from texto import acertijos
+import time 
+import os
 
-print('+++++++++++++++++++++++++++++++++++')
-print('Bienvenido a Magic Forest Quest!')
-print('+++++++++++++++++++++++++++++++++++')
+print('++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('          Bienvenido a Magic Forest Quest!')
+print('++++++++++++++++++++++++++++++++++++++++++++++++++')
 nombre_usuario = input('Cual es tu nombre? ')
 
 # --------------------------------------------------------------------------------------
 # Crear personajes 
 # --------------------------------------------------------------------------------------
-player = Jugador(nombre_usuario, 'humano', 'valiente, entusiasta y alegre', 'encontrar el arbol magico para obtener su sabiduria', 'sacar adelante a mi puebloa  traves de la magia', 'Acompanhame en esta aventura') 
+player = Jugador(nombre_usuario, 'humano', 'valiente, entusiasta y alegre', 'encontrar el arbol magico para obtener su sabiduria', 'sacar adelante a mi pueblo a traves de la magia', 'Acompanhame en esta aventura') 
 
 anciano = Anciano ('Alatar', 'humano', 'sabio, amable y protector', 'llevar la voz de la magia al mundo', 'creo que la magia salvara muchas vidas si se la lleva al lugar correcto',  'Bienvenido, explorador') 
 
@@ -27,39 +29,51 @@ protector1 = Protector('Talara', 'ninfa', 'amigable, curiosa y protectora.', 'in
 # --------------------------------------------------------------------------------------
 
 print('-----------------------------------')
-print('INICIA EL JUEGO: ')
+print('         INICIA EL JUEGO: ')
 print('-----------------------------------')
+time.sleep(1)
+os.system('clear')
 
 
 # El jugador se encuentra con el anciano, quien le presenta su mision. 
 print('>> Anciano del Bosque: ')
 anciano.convocar_al_jugador()
+time.sleep(3)
 
 print(f'\n>> {player.nombre}: \nMuchas gracias por convocarme! Pero tu quien eres? ')
 
 print('\n>> Anciano')
 anciano.presentarse()
+time.sleep(5)
+os.system('clear')
 
 
 # El jugador inicia su aventura, encontrandose con un protector del bosque. Este le hace una pregunta y recibe su dinero.
-print('<< Inicia la aventura. A los pocos pasos de despedirse del anciano, el jugador se encuentra con una tranquila criatura. Por amabilidad, decide presentarse. >> ') 
+print('\n\n<< Inicia la aventura. A los pocos pasos de despedirse del anciano, el jugador se encuentra con una tranquila criatura. Por amabilidad, decide presentarse. >> ') 
 
 print('\n>> Jugador')
 player.presentarse() 
+time.sleep(4)
+
 
 print(f'\n>> {protector1.nombre} (Protector del Bosque)')
 protector1.presentarse()
+time.sleep(4)
+
 
 print(f'\n>> {protector1.nombre} (Protector del Bosque)')
 protector1.hacer_pregunta()
 player.responder_pregunta()
 protector1.ofrecer_dinero(player)
+time.sleep(5)
+os.system('clear')
 
 
 # El jugador se encuentra con uno de los sabios. 
 print(f'\n>> {sabio_mentor.nombre} (Sabio)')
 sabio_mentor.presentarse()
 print('Estas listo para un desafio??')
+time.sleep(3)
 
 while True: 
     acertijo = random.choice(acertijos)
@@ -68,6 +82,7 @@ while True:
     sabio_mentor.dar_acertijo(acertijo)
 
     respuesta_jugador = player.resolver_acertijo()
+    time.sleep(3)
 
     if verificar_respuesta(respuesta_jugador, acertijo): 
         print('La respuesta es correcta!')
@@ -93,3 +108,5 @@ while True:
             aceptar = sabio_mentor.sobornar_jugador()
             if aceptar:
                 break 
+
+print('... continuara')
